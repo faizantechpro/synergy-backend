@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  dbsynergy:
+    image: mongo
+    container_name: dbsynergy
+    ports:
+    - "27027:27027"
+    expose:
+      - "27027"
+    volumes:
+    - dbsynergy:/data/db
+  synergy-api-docker:
+    image: synergy-api-server
+    container_name: synergy-api-server-container
+    ports:
+      - "9001:9001"
+    expose:
+      - "9001"
+    entrypoint: ["npm", "run", "docker"]
+    restart: "on-failure"
+    
+volumes:
+  dbsynergy:
+
