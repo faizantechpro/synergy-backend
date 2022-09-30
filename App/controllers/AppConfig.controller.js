@@ -1,5 +1,5 @@
 import { AppConfig } from "../models/AppConfig.model.js";
-import { User } from "../models/User.model.js";
+import { User } from "../models/User.model.js";   
 
 export const AppConfigurations = async (req, res) => {
   try {
